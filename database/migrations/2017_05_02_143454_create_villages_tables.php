@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRegenciesTables extends Migration
+class CreateVillagesTables extends Migration
 {
     /**
      * Run the migrations.
@@ -20,13 +20,13 @@ class CreateRegenciesTables extends Migration
      */
     public function up()
     {
-        Schema::create('regencies', function(Blueprint $table){
-            $table->char('id', 4)->index();
-            $table->char('province_id', 2);
+        Schema::create('villages', function(Blueprint $table){
+            $table->char('id', 10)->index();
+            $table->char('district_id', 7);
             $table->string('name', 50);
-            $table->foreign('province_id')
+            $table->foreign('district_id')
                 ->references('id')
-                ->on('provinces')
+                ->on('districts')
                 ->onUpdate('cascade')->onDelete('restrict');
         });
     }
@@ -38,6 +38,6 @@ class CreateRegenciesTables extends Migration
      */
     public function down()
     {
-        Schema::drop('regencies');
+        Schema::drop('villages');
     }
 }

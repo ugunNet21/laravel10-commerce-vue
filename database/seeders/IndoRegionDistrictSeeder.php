@@ -7,8 +7,11 @@
  *
  */
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use AzisHapidin\IndoRegion\RawDataGetter;
+use Illuminate\Support\Facades\DB;
 
 class IndoRegionDistrictSeeder extends Seeder
 {
@@ -25,6 +28,6 @@ class IndoRegionDistrictSeeder extends Seeder
         $districts = RawDataGetter::getDistricts();
 
         // Insert Data to Database
-        DB::table('indoregion_districts')->insert($districts);
+        DB::table('districts')->insert($districts);
     }
 }

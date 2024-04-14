@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "528c12f8bb52d3dd7b68f70b3ff00584",
+    "content-hash": "423c51a983a2d1d945d587724be45530",
     "packages": [
         {
             "name": "azishapidin/indoregion",
-            "version": "2.2.2",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/azishapidin/indoregion.git",
-                "reference": "ebe4f4af86325b8dcbae9be8e1f25fbbb08c772e"
+                "reference": "95874c8b89ae8216fad11ec0f8e81de544331ded"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/azishapidin/indoregion/zipball/ebe4f4af86325b8dcbae9be8e1f25fbbb08c772e",
-                "reference": "ebe4f4af86325b8dcbae9be8e1f25fbbb08c772e",
+                "url": "https://api.github.com/repos/azishapidin/indoregion/zipball/95874c8b89ae8216fad11ec0f8e81de544331ded",
+                "reference": "95874c8b89ae8216fad11ec0f8e81de544331ded",
                 "shasum": ""
             },
             "require": {
@@ -72,9 +72,9 @@
             ],
             "support": {
                 "issues": "https://github.com/azishapidin/indoregion/issues",
-                "source": "https://github.com/azishapidin/indoregion/tree/master"
+                "source": "https://github.com/azishapidin/indoregion/tree/3.0.3"
             },
-            "time": "2020-06-06T13:48:45+00:00"
+            "time": "2021-04-23T12:16:58+00:00"
         },
         {
             "name": "brick/math",

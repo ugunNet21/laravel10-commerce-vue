@@ -7,8 +7,11 @@
  *
  */
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use AzisHapidin\IndoRegion\RawDataGetter;
+use Illuminate\Support\Facades\DB;
 
 class IndoRegionRegencySeeder extends Seeder
 {
@@ -25,6 +28,6 @@ class IndoRegionRegencySeeder extends Seeder
         $regencies = RawDataGetter::getRegencies();
 
         // Insert Data to Database
-        DB::table('indoregion_regencies')->insert($regencies);
+        DB::table('regencies')->insert($regencies);
     }
 }
