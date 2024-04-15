@@ -15,15 +15,15 @@
                         @csrf
                         <div class="form-group">
                             <label>Full Name</label>
-                            <input 
+                            <input
                                 v-model="name"
-                                id="name" 
-                                type="text" 
-                                class="form-control @error('name') is-invalid @enderror" 
-                                name="name" 
-                                value="{{ old('name') }}" 
-                                required 
-                                autocomplete="name" 
+                                id="name"
+                                type="text"
+                                class="form-control @error('name') is-invalid @enderror"
+                                name="name"
+                                value="{{ old('name') }}"
+                                required
+                                autocomplete="name"
                                 autofocus
                             >
                             @error('name')
@@ -34,16 +34,16 @@
                         </div>
                         <div class="form-group">
                             <label>Email Address</label>
-                            <input 
+                            <input
                                 v-model="email"
                                 @change="checkForEmailAvailability()"
-                                id="email" 
-                                type="email" 
-                                class="form-control @error('email') is-invalid @enderror" 
+                                id="email"
+                                type="email"
+                                class="form-control @error('email') is-invalid @enderror"
                                 :class="{ 'is-invalid': this.email_unavailable }"
-                                name="email" 
-                                value="{{ old('email') }}" 
-                                required 
+                                name="email"
+                                value="{{ old('email') }}"
+                                required
                                 autocomplete="email"
                             >
                             @error('email')
@@ -54,12 +54,12 @@
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input 
-                                id="password" 
-                                type="password" 
-                                class="form-control @error('password') is-invalid @enderror" 
-                                name="password" 
-                                required 
+                            <input
+                                id="password"
+                                type="password"
+                                class="form-control @error('password') is-invalid @enderror"
+                                name="password"
+                                required
                                 autocomplete="new-password"
                             >
                             @error('password')
@@ -70,12 +70,12 @@
                         </div>
                         <div class="form-group">
                             <label>Konfirmasi Password</label>
-                            <input 
-                                id="password-confirm" 
-                                type="password" 
-                                class="form-control" 
-                                name="password_confirmation" 
-                                required 
+                            <input
+                                id="password-confirm"
+                                type="password"
+                                class="form-control"
+                                name="password_confirmation"
+                                required
                                 autocomplete="new-password"
                             >
                         </div>
@@ -117,15 +117,15 @@
                         </div>
                         <div class="form-group" v-if="is_store_open">
                             <label>Nama Toko</label>
-                            <input 
+                            <input
                                 v-model="store_name"
-                                id="store_name" 
-                                type="text" 
-                                class="form-control @error('store_name') is-invalid @enderror" 
-                                name="store_name" 
-                                value="{{ old('store_name') }}" 
-                                required 
-                                autocomplete="store_name" 
+                                id="store_name"
+                                type="text"
+                                class="form-control @error('store_name') is-invalid @enderror"
+                                name="store_name"
+                                value="{{ old('store_name') }}"
+                                required
+                                autocomplete="store_name"
                                 autofocus
                             >
                             @error('name')
@@ -172,7 +172,7 @@
         el: "#register",
         mounted() {
           AOS.init();
-       
+
         },
         methods: {
             checkForEmailAvailability: function () {
@@ -209,8 +209,8 @@
         },
         data() {
             return {
-                name: "Angga Hazza Sett",
-                email: "kamujagoan@bwa.id",
+                name: "Ugun",
+                email: "ugun@store.id",
                 is_store_open: true,
                 store_name: "",
                 email_unavailable: false
