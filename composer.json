@@ -14,6 +14,7 @@
         "laravel/tinker": "^2.8",
         "laravel/ui": "^4.5",
         "midtrans/midtrans-php": "^2.3",
+        "realrashid/sweet-alert": "^7.1",
         "yajra/laravel-datatables": "^10.1"
     },
     "require-dev": {
