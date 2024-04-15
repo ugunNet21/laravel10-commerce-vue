@@ -35,7 +35,6 @@ class DashboardSettingController extends Controller
         $item = Auth::user();
 
         $item->update($data);
-        dd($item);
 
         return redirect()->route($redirect)->withSuccess('Has been updated!');
     }
