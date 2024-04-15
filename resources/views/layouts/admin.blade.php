@@ -53,7 +53,7 @@
             </a>
             <a
               href="{{ route('transaction.index') }}"
-              class="list-group-item list-group-item-action"
+              class="list-group-item list-group-item-action {{(request()->is('admin/transaction*')) ? 'active' : ''}}"
             >
               Transactions
             </a>
