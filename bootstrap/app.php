@@ -15,6 +15,14 @@ $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
+// matiin
+if (env('APP_ENV') === 'local') {
+    $guzzleClient = new \GuzzleHttp\Client(['verify' => false]);
+    $app->bind('GuzzleHttp\Client', function () use ($guzzleClient) {
+        return $guzzleClient;
+    });
+}
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces

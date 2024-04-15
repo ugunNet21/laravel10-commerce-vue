@@ -11,11 +11,15 @@ use App\TransactionDetail;
 use Midtrans\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\RequestException;
+
 
 class CheckoutController extends Controller
 {
     public function process(Request $request)
     {
+        $client = new Client(['verify' => false]);
         // TODO: Save users data
         $user = Auth::user();
         $user->update($request->except('total_price'));
@@ -66,8 +70,9 @@ class CheckoutController extends Controller
                 'gross_amount' => (int) $request->total_price,
             ),
             'customer_details' => array(
-                'first_name'    => 'Galih Pratama',
-                'email'         => 'hanamura.iost@gmail.com'
+                'first_name'    => 'Gugun Gunawan',
+                'email'         => 'infonetkomputerbdg@gmail.com',
+                // 'email'         => 'hanamura.iost@gmail.com',
             ),
             'enabled_payments' => array('gopay','bank_transfer'),
             'vtweb' => array()
