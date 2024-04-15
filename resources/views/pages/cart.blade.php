@@ -100,7 +100,7 @@
                     class="form-control"
                     id="address_one"
                     name="address_one"
-                    value="Setra Duta Cemara"
+                    value="Pertokoan Jaya Plaza"
                   />
                 </div>
               </div>
@@ -112,7 +112,7 @@
                     class="form-control"
                     id="address_two"
                     name="address_two"
-                    value="Blok B2 No. 34"
+                    value="Jl. Pasar Sindanglaya No.154"
                   />
                 </div>
               </div>
