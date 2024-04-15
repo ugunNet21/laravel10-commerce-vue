@@ -70,7 +70,7 @@
                             <a href="{{ route('categories-detail', $category->slug) }}" class="component-categories d-block">
                                 <div class="categories-image">
                                     <img
-                                    src="{{  Storage::url($category->photo) }}"
+                                    src="{{  Storage::url($category->photo) ?? 'No Picture' }}"
                                     alt=""
                                     class="w-100"
                                     />
@@ -114,7 +114,7 @@
                                     class="products-image"
                                     style="
                                         @if($product->galleries)
-                                            background-image: url('{{ Storage::url($product->galleries->first()->photos) }}');
+                                            background-image: url('{{ Storage::url($product->galleries->first()->photos ?? 'No Picture') }}');
                                         @else
                                             background-color: #eee;
                                         @endif

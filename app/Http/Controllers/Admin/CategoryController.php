@@ -112,7 +112,7 @@ class CategoryController extends Controller
         $item = Category::findorFail($id);
         $item->delete();
 
-        return redirect()->route('category.index');
+        return redirect()->route('category.index')->withSuccess('Kategori berhasil dihapus');
 
     }
 }

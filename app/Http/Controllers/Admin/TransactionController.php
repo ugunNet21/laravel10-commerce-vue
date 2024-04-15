@@ -10,11 +10,7 @@ use Yajra\DataTables\Facades\DataTables;
 
 class TransactionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         if (request()->ajax()) {
@@ -25,9 +21,9 @@ class TransactionController extends Controller
                     return '
                         <div class="btn-group">
                             <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle mr-1 mb-1" 
+                                <button class="btn btn-primary dropdown-toggle mr-1 mb-1"
                                     type="button" id="action' .  $item->id . '"
-                                        data-toggle="dropdown" 
+                                        data-toggle="dropdown"
                                         aria-haspopup="true"
                                         aria-expanded="false">
                                         Aksi
@@ -53,60 +49,35 @@ class TransactionController extends Controller
         return view('pages.admin.transaction.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         $item = Transaction::with(['user'])->findOrFail($id);
-        
+
         return view('pages.admin.transaction.edit',[
             'item' => $item
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         $data = $request->all();
@@ -115,20 +86,15 @@ class TransactionController extends Controller
 
         $item->update($data);
 
-        return redirect()->route('transaction.index');
+        return redirect()->route('transaction.index')->withSuccess('Data berhasil diubah');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         $item = Transaction::findorFail($id);
         $item->delete();
 
-        return redirect()->route('transaction.index');
+        return redirect()->route('transaction.index')->withSuccess('Data telah dihapus!');
     }
 }

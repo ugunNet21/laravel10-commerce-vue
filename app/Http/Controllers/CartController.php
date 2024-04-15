@@ -8,15 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+
     public function index()
     {
         $carts = Cart::with(['product.galleries', 'user'])->where('users_id', Auth::user()->id)->get();
-        
+
         return view('pages.cart',[
             'carts' => $carts
         ]);
@@ -28,9 +24,9 @@ class CartController extends Controller
 
         $cart->delete();
 
-        return redirect()->route('cart');
+        return redirect()->route('cart')->withSuccess('Product has been removed from your cart');
     }
-    
+
     public function success()
     {
         return view('pages.success');

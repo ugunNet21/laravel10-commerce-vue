@@ -18,7 +18,7 @@ class DashboardTransactionController extends Controller
                             ->whereHas('transaction', function($transaction){
                                 $transaction->where('users_id', Auth::user()->id);
                             })->get();
-        
+
         return view('pages.dashboard-transactions',[
             'sellTransactions' => $sellTransactions,
             'buyTransactions' => $buyTransactions
@@ -42,6 +42,6 @@ class DashboardTransactionController extends Controller
 
         $item->update($data);
 
-        return redirect()->route('dashboard-transaction-details', $id);
+        return redirect()->route('dashboard-transaction-details', $id)->withSuccess('Has been updated!');
     }
 }

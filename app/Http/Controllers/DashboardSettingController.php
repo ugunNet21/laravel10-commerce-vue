@@ -36,6 +36,6 @@ class DashboardSettingController extends Controller
 
         $item->update($data);
 
-        return redirect()->route($redirect);
+        return redirect()->route($redirect)->withSuccess('Has been updated!');
     }
 }

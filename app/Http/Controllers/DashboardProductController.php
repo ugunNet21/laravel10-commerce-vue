@@ -40,7 +40,7 @@ class DashboardProductController extends Controller
 
         ProductGallery::create($data);
 
-        return redirect()->route('dashboard-product-details', $request->products_id);
+        return redirect()->route('dashboard-product-details', $request->products_id)->withSuccess('Has been uploaded!');
     }
 
     public function deleteGallery(Request $request, $id)
@@ -48,7 +48,7 @@ class DashboardProductController extends Controller
         $item = ProductGallery::findorFail($id);
         $item->delete();
 
-        return redirect()->route('dashboard-product-details', $item->products_id);
+        return redirect()->route('dashboard-product-details', $item->products_id)->withSuccess('Photo has been deleted!');
     }
 
     public function create()
@@ -75,7 +75,7 @@ class DashboardProductController extends Controller
         ];
         ProductGallery::create($gallery);
 
-        return redirect()->route('dashboard-product');
+        return redirect()->route('dashboard-product')->withSuccess('Has been added!');
     }
 
     public function update(ProductRequest $request, $id)
@@ -88,6 +88,6 @@ class DashboardProductController extends Controller
 
         $item->update($data);
 
-        return redirect()->route('dashboard-product');
+        return redirect()->route('dashboard-product')->withSuccess('Product has been updated');
     }
 }

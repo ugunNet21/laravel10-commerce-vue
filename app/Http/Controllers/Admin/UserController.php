@@ -106,7 +106,7 @@ class UserController extends Controller
         $item = User::findorFail($id);
         $item->delete();
 
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')->withSuccess('User berhasil dihapus');
 
     }
 }
