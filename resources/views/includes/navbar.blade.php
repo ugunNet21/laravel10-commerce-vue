@@ -98,9 +98,9 @@
                         Cart
                     </a>
                 </li>
-            </ul>    
+            </ul>
         @endauth
-        
+
     </div>
     </div>
 </nav>
