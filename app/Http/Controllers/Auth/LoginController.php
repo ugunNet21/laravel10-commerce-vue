@@ -23,7 +23,7 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        if ($user->isAdmin()) {
+        if ($user->roles == 'ADMIN') {
             return redirect()->route('admin-dashboard');
         }
 
